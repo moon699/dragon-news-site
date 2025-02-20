@@ -2,6 +2,7 @@ import { FaRegStar, FaStar } from "react-icons/fa";
 import { AiOutlineEye } from "react-icons/ai";
 import { FiShare2 } from "react-icons/fi";
 import { HiOutlineBookmark } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const NewsCard = (props = {}) => {
   const { news } = props || {};
@@ -42,7 +43,7 @@ const NewsCard = (props = {}) => {
 
         {/* Details */}
         <p className="text-sm text-gray-600 mb-3">
-          {news?.details} <span className="text-red-500 cursor-pointer">Read More</span>
+          {news?.details} <Link to={`/news/${news._id}`}  className="text-red-500 cursor-pointer">Read More</Link>
         </p>
 
         {/* Rating and Views */}
